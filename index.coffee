@@ -1,4 +1,6 @@
-http = require 'http'
-server = http.createServer (req,res) -> res.end "HELLO WORLD"
-server.listen 8080
+express = require 'express'
+app = express()
+app.get '/index.html', (req,res) -> res.json hello:'world'
+app.get '/', (req,res) -> res.json 'root':'here'
+app.listen 8080
 
